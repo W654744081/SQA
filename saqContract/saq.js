@@ -48,10 +48,9 @@ BaikeDictionary.prototype = {
         if (lemmaSummary.length < 5 || title.length < 3){
             throw new Error("title / lemmaSummary exceed limit length")
         }
-   
         if (detailDesc != ""){
             if (detailDesc.length < 15){
-                throw new Error("detailDesc length must greate 128 ")
+                throw new Error("detailDesc length must greate 15 ")
             }
         }
         var from = Blockchain.transaction.from;
