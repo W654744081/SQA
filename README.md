@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+## 小众问答(Small Answer Question )
 
-You can use the [editor on GitHub](https://github.com/W654744081/SQA/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### 介绍
+小众问答意在提供一个知识分享的平台，但这个分享是有代价的，他是一个付费分享。
+内容提供者可以自己创建话题，也可以回答问题。
+问题发布者，回答问题的人都可以从问题的活跃度中获取相应的报酬。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/W654744081/SQA/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
