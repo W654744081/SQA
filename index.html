@@ -172,8 +172,8 @@
         温馨提醒: 请安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use SUPER DICTIONARY
     </div>
     <div class="search">
-        <input id="search_value" type="text">
-        <button id=search>查找</button>
+        <input id="search_value" type="text" placeholder="问题不能小于3个字">
+        <button id=search>搜索</button>
     </div>
 
     <div class="result_success hide">
@@ -190,8 +190,8 @@
     </div>
 
     <div class="add_banner hide">
-        <input type="text" id="add_value" placeholder="输入摘要"></br>
-		<textarea rows="10" cols="20" id="add_value_detail" placeholder="输入详情"></textarea></br>
+        <input type="text" id="add_value" placeholder="摘要不能小于5个字"></br>
+		<textarea rows="10" cols="20" id="add_value_detail" placeholder="回答详情不能小于15个字"></textarea></br>
         <button id="push">提交问题</button>
     </div>
 	
@@ -220,15 +220,16 @@
     //     $("#search").attr("disabled",false)
     // }
 
-    var dappAddress = "n1iwSVAMhbrKEsyHSDRrS5qdZuqJuHBnYHo";
-
+    var dappAddress = "n1fhGaGWGqKfj5CGCFRoM7htEyYt4Qrkuiy";
+	//var dappAddress = "n1n3e417yLj89RbRdALp2X9wtdiZmeX1FyD";
+	
     //here we use neb.js to call the "get" function to search from the Dictionary
     var nebulas = require("nebulas"),
         Account = nebulas.Account,
         neb = new nebulas.Neb();
     neb.setRequest(new nebulas.HttpRequest("https://Mainnet.nebulas.io"));
-
-    // 搜索功能: 查找Super-Dictionary 中有没有该词条
+	//neb.setRequest(new nebulas.HttpRequest("https://Testnet.nebulas.io"));
+    // 搜索功能: 查找是否已经有该词条
     $("#search").click(function(){
         // $("#search_value").val() 搜索框内的值
 
@@ -298,7 +299,7 @@
 
     }
 
-    // 添加信息功能: 像super-dictionary 中添加词条
+    // 添加问题
     $("#add").click(function() {
         $(".result_faile").addClass("hide");
         $(".add_banner").removeClass("hide");
@@ -317,13 +318,14 @@
         var value = "0";
         var callFunction = "save"
         var callArgs = "[\"" + $("#search_value").val() + "\",\"" + $("#add_value").val() + "\",\"" + $("#add_value_detail").val() + "\"]"
+		
         serialNumber = nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
             listener: cbPush        //设置listener, 处理交易返回信息
         });
 
         intervalQuery = setInterval(function () {
             funcIntervalQuery();
-        }, 30000);
+        }, 20000);
     });
 
     var intervalQuery
